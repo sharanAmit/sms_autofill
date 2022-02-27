@@ -4,7 +4,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:pin_input_text_field/pin_input_text_field.dart';
-
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 export 'package:pin_input_text_field/pin_input_text_field.dart';
 
 class SmsAutoFill {
@@ -289,9 +289,15 @@ class _PhoneFieldHintState extends State<_PhoneFieldHint> {
   Widget build(BuildContext context) {
     final decoration = widget.decoration ??
         InputDecoration(
+         hintText: 'Enter your mobile number',
+         hintStyle: TextStyle(
+           fontSize: 14.sp,
+           color: const Color.fromARGB(
+             255, 76, 30, 155)),
+           )
           suffixIcon: Platform.isAndroid
               ? IconButton(
-                  icon: Icon(Icons.phonelink_setup),
+                  icon: Icon(Icons.phone_android),
                   onPressed: () async {
                     _hintShown = true;
                     await _askPhoneHint();

@@ -294,7 +294,7 @@ class _PhoneFieldHintState extends State<_PhoneFieldHint> {
            fontSize: 14.sp,
            color: const Color.fromARGB(
              255, 76, 30, 155)),
-           ),
+           
           suffixIcon: Platform.isAndroid
               ? IconButton(
                   icon: Icon(Icons.phone_android),

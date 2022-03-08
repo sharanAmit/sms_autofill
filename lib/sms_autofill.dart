@@ -299,10 +299,14 @@ class _PhoneFieldHintState extends State<_PhoneFieldHint> {
         InputDecoration(
           hintText: 'Enter your mobile number',
           hintStyle: TextStyle(
-              fontSize: 14.sp, color: const Color.fromARGB(255, 76, 30, 155)),
+              fontSize: 13.sp, color: const Color.fromARGB(255, 76, 30, 155)),
           suffixIcon: Platform.isAndroid
               ? IconButton(
-                  icon: const Icon(Icons.phone_android),
+                  padding: EdgeInsets.zero,
+                  icon: const Icon(
+                    Icons.phone_android,
+                    color: const Color.fromARGB(255, 76, 30, 155),
+                  ),
                   onPressed: () async {
                     _hintShown = true;
                     await _askPhoneHint();
@@ -349,6 +353,7 @@ class _PhoneFieldHintState extends State<_PhoneFieldHint> {
   Widget _createTextFormField(
       InputDecoration decoration, FormFieldValidator? validator) {
     return TextFormField(
+      style: TextStyle(color: const Color.fromARGB(255, 35, 11, 77)),
       validator: validator,
       autofocus: widget.autoFocus,
       focusNode: _focusNode,
